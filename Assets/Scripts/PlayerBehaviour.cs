@@ -8,10 +8,18 @@ public class PlayerBehaviour : MonoBehaviour
     private float speedRotate = 200f;
     private Animator animacion;
     private float x, y;
+    private float jumpForce;
+    private Rigidbody physicBody;
+    private bool isJump = false;
+    private bool floorDetected = false;
     // Start is called before the first frame update
     void Start()
     {
         animacion = GetComponent<Animator>();
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        jumpForce = 6f;
+        physicBody = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -19,6 +27,7 @@ public class PlayerBehaviour : MonoBehaviour
     {
         MovePlayer();
         
+
     }
     public void MovePlayer()
     {
@@ -31,5 +40,25 @@ public class PlayerBehaviour : MonoBehaviour
 
         animacion.SetFloat("VelX", horizontal);
         animacion.SetFloat("VelY", vertical);
+        isJump = Input.GetButtonDown("Jump");
+
+        Vector3 floor = transform.TransformDirection(Vector3.down);
+
+        if (Physics.Raycast(transform.position, floor, 1.03f))
+        {
+            floorDetected = true;
+            // Debug.Log("esta en true");
+        }
+        else
+        {
+            floorDetected = false;
+        }
+
+        if (isJump && floorDetected)
+
+        {
+            physicBody.AddForce(new Vector3(0, jumpForce, 0), ForceMode.Impulse);
+            
+        }
     }
 }
