@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerBehaviour : MonoBehaviour
 {
-    private float speed = 3f;
+    private float speed = 4f;
     private float speedRotate = 200f;
     private Animator animacion;
     private float x, y;
@@ -44,10 +44,10 @@ public class PlayerBehaviour : MonoBehaviour
 
         Vector3 floor = transform.TransformDirection(Vector3.down);
 
-        if (Physics.Raycast(transform.position, floor, 1.03f))
+        if (Physics.Raycast(transform.position, floor, 0.5f))
         {
             floorDetected = true;
-            // Debug.Log("esta en true");
+             //Debug.Log("esta en true");
         }
         else
         {
