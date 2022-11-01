@@ -54,11 +54,24 @@ public class PlayerBehaviour : MonoBehaviour
             floorDetected = false;
         }
 
-        if (isJump && floorDetected)
 
+        if (floorDetected)
         {
-            physicBody.AddForce(new Vector3(0, jumpForce, 0), ForceMode.Impulse);
-            
+            if (isJump)
+            {
+                animacion.SetBool("jump", true);
+                physicBody.AddForce(new Vector3(0, jumpForce, 0), ForceMode.Impulse);
+            }
+            animacion.SetBool("hitGround", true);
         }
+        else
+        {
+            Falling();
+        }
+    }
+    public void Falling()
+    {
+        animacion.SetBool("hitGround", false);
+        animacion.SetBool("jump", false);
     }
 }
