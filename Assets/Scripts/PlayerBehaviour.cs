@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerBehaviour : MonoBehaviour
 {
-    private float speed = 4f;
+    public float speed = 5f;
     private float speedRotate = 200f;
     private Animator animacion;
     private float x, y;
@@ -12,6 +12,12 @@ public class PlayerBehaviour : MonoBehaviour
     private Rigidbody physicBody;
     private bool isJump = false;
     private bool floorDetected = false;
+
+    private bool atacando;
+    public bool avanza;
+    public float impulsoGolpe = 10f;
+
+    public bool conArma;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,13 +27,24 @@ public class PlayerBehaviour : MonoBehaviour
         jumpForce = 6f;
         physicBody = GetComponent<Rigidbody>();
     }
+    void FixedUpdate()
+    {
+        if (avanza)
+        {
+            physicBody.velocity = transform.forward * impulsoGolpe;
+        }
+    }
 
     // Update is called once per frame
     void Update()
     {
-        MovePlayer();
-        
+        if (!atacando)
+        {
+            MovePlayer();
+        }
+        Atacar();
 
+        
     }
     public void MovePlayer()
     {
@@ -55,7 +72,7 @@ public class PlayerBehaviour : MonoBehaviour
         }
 
 
-        if (floorDetected)
+        /*if (floorDetected)
         {
             if (isJump)
             {
@@ -67,11 +84,61 @@ public class PlayerBehaviour : MonoBehaviour
         else
         {
             Falling();
+        }*/
+
+        if (floorDetected)
+        {
+            if (!atacando)
+            {
+                if (isJump)
+                {
+                    animacion.SetBool("jump", true);
+                    physicBody.AddForce(new Vector3(0, jumpForce, 0), ForceMode.Impulse);
+                }
+            }
+            
+            animacion.SetBool("hitGround", true);
+        }
+        else
+        {
+            Falling();
         }
     }
     public void Falling()
     {
         animacion.SetBool("hitGround", false);
         animacion.SetBool("jump", false);
+    }
+
+    public void Atacar()
+    {
+
+        if (Input.GetKeyDown(KeyCode.E) && floorDetected && !atacando)
+        {
+            
+            if (conArma)
+            {
+                animacion.SetTrigger("golpe2");
+                atacando = true;
+            }
+            else
+            {
+                animacion.SetTrigger("golpe1");
+                atacando = true;
+            }
+        }
+    }
+    public void DejarDeGolpear()
+    {
+        atacando = false;
+        //avanza = false;
+    }
+    public void AvanzoSolo()
+    {
+        avanza = true;
+    }
+    public void DejaDeAvanzar()
+    {
+        avanza = false;
     }
 }
