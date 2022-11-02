@@ -8,11 +8,11 @@ public class EnemyBehaviour : MonoBehaviour
     public int danioArma;
     public int danioPunio;
 
-    //public Animator animacion;
+    private Animator animacion;
     // Start is called before the first frame update
     void Start()
     {
-        
+        animacion = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -41,7 +41,9 @@ public class EnemyBehaviour : MonoBehaviour
         }
         if (hp <= 0)
         {
-            Destroy(gameObject);
+
+            animacion.SetBool("diying", true);
+            //Destroy(gameObject);
         }
     }
 }
