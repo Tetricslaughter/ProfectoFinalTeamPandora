@@ -8,13 +8,6 @@ public class ArrowBehaviour : MonoBehaviour
     private int ArrowType;
     [SerializeField]
     private float speed;
-    void Start()
-    {
-        if (transform.position.x < 19)
-        {
-            speed *= -1;
-        }
-    }
 
     // Update is called once per frame
     void Update()

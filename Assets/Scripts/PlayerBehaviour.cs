@@ -146,4 +146,12 @@ public class PlayerBehaviour : MonoBehaviour
     {
         avanza = false;
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag=="Finish")
+        {
+            transform.position = new Vector3(62f,62f,42f);
+        }
+    }
 }
