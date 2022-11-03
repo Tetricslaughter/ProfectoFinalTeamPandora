@@ -8,6 +8,7 @@ public class CambioEscena : MonoBehaviour
     [SerializeField] private float transicionTime = 1f;
     private Animator transicionAnimator;
     public int numeroEscena;
+    public int  escenaActual;
 
     // public void LoadNextScene()
     // {
@@ -25,7 +26,9 @@ public class CambioEscena : MonoBehaviour
 
     void Start()
     {
+        escenaActual = SceneManager.GetActiveScene().buildIndex;
         transicionAnimator = GetComponentInChildren<Animator>();
+        Debug.Log(escenaActual);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -48,5 +51,10 @@ public class CambioEscena : MonoBehaviour
         yield return new WaitForSeconds(transicionTime);
         //carga la escena
         SceneManager.LoadScene(sceneIndex);
+    }
+    public void CargaEscenaActual()
+    {
+        StartCoroutine(CargaEscena(escenaActual));
+        
     }
 }
