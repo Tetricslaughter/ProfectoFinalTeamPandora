@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EnemyBehaviour : MonoBehaviour
 {
+    [SerializeField]
+    private int enemyType;
     public int hp;
     public int danioArma;
     public int danioPunio;
@@ -45,5 +47,10 @@ public class EnemyBehaviour : MonoBehaviour
             animacion.SetBool("diying", true);
             //Destroy(gameObject);
         }
+    }
+
+    public void DestroyEnemy()
+    {
+        Destroy(gameObject);
     }
 }
