@@ -18,9 +18,14 @@ public class PlayerBehaviour : MonoBehaviour
     public float impulsoGolpe = 10f;
 
     public bool conArma;
+
+    public int hpPlayer;
+    public BarraVidaBehaviour barraVida;
     // Start is called before the first frame update
     void Start()
     {
+        barraVida.vidaMax = hpPlayer;
+        barraVida.vidaActual = hpPlayer;
         animacion = GetComponent<Animator>();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;

@@ -11,9 +11,13 @@ public class EnemyBehaviour : MonoBehaviour
     public int danioPunio;
 
     private Animator animacion;
+
+    public BarraVidaBehaviour barraVida;
     // Start is called before the first frame update
     void Start()
     {
+        barraVida.vidaMax = hp;
+        barraVida.vidaActual = hp;
         animacion = GetComponent<Animator>();
     }
 
@@ -32,6 +36,7 @@ public class EnemyBehaviour : MonoBehaviour
                 animacion.Play("NombreAnimación");
             }*/
             hp -= danioArma;
+            barraVida.vidaActual = hp;
         }
         if (other.gameObject.tag == "golpeImpacto")
         {
@@ -40,6 +45,7 @@ public class EnemyBehaviour : MonoBehaviour
                 animacion.Play("NombreAnimación");
             }*/
             hp -= danioPunio;
+            barraVida.vidaActual = hp;
         }
         if (hp <= 0)
         {
