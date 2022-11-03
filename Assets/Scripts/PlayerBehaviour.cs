@@ -21,9 +21,11 @@ public class PlayerBehaviour : MonoBehaviour
 
     public int hpPlayer;
     public BarraVidaBehaviour barraVida;
+    public CambioEscena restart;
     // Start is called before the first frame update
     void Start()
     {
+        restart = FindObjectOfType<CambioEscena>();
         barraVida.vidaMax = hpPlayer;
         barraVida.vidaActual = hpPlayer;
         animacion = GetComponent<Animator>();
@@ -151,7 +153,8 @@ public class PlayerBehaviour : MonoBehaviour
     {
         if (collision.gameObject.tag=="Finish")
         {
-            transform.position = new Vector3(62f,62f,42f);
+            restart.CargaEscenaActual();
+            // transform.position = new Vector3(62f,62f,42f);
         }
     }
 }
