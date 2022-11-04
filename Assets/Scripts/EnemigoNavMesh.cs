@@ -6,6 +6,7 @@ public class EnemigoNavMesh : MonoBehaviour
 {
     //Necesario para el NavMesh
     public GameObject player;
+    public float stopEn;
     private UnityEngine.AI.NavMeshAgent agente;
 
     //Al detectar al jugador
@@ -33,7 +34,7 @@ public class EnemigoNavMesh : MonoBehaviour
             Vector3 pos = new Vector3(player.GetComponent<Transform>().position.x, transform.position.y, transform.position.z);
             transform.LookAt(pos);
             agente.SetDestination(player.GetComponent<Transform>().position);
-            agente.stoppingDistance = 0;
+            agente.stoppingDistance = stopEn;
         }
         //else
         //{
