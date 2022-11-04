@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.32687575, g: 0.28962916, b: 0.32220384, a: 1}
+  m_IndirectSpecularColor: {r: 0.3270211, g: 0.28962654, b: 0.32214934, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -23114,6 +23114,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 727441026}
+    - target: {fileID: 3898150778682766737, guid: a57919a4452623741bb7bd8c630d1b5d, type: 3}
+      propertyPath: stopEn
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6987668722709278612, guid: a57919a4452623741bb7bd8c630d1b5d, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -23277,9 +23281,29 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 727441026}
+    - target: {fileID: 2016677402979578077, guid: bb3c2ff13da41d647bd0fe2def9a8512, type: 3}
+      propertyPath: stopEn
+      value: 2.5
+      objectReference: {fileID: 0}
     - target: {fileID: 5068609042724302866, guid: bb3c2ff13da41d647bd0fe2def9a8512, type: 3}
       propertyPath: m_Name
       value: Enemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 5374545603945750424, guid: bb3c2ff13da41d647bd0fe2def9a8512, type: 3}
+      propertyPath: m_Size.x
+      value: 0.74672776
+      objectReference: {fileID: 0}
+    - target: {fileID: 5374545603945750424, guid: bb3c2ff13da41d647bd0fe2def9a8512, type: 3}
+      propertyPath: m_Size.z
+      value: 0.8147952
+      objectReference: {fileID: 0}
+    - target: {fileID: 5374545603945750424, guid: bb3c2ff13da41d647bd0fe2def9a8512, type: 3}
+      propertyPath: m_Center.x
+      value: -0.065867506
+      objectReference: {fileID: 0}
+    - target: {fileID: 5374545603945750424, guid: bb3c2ff13da41d647bd0fe2def9a8512, type: 3}
+      propertyPath: m_Center.z
+      value: 0.11019649
       objectReference: {fileID: 0}
     - target: {fileID: 5374545604495289508, guid: bb3c2ff13da41d647bd0fe2def9a8512, type: 3}
       propertyPath: m_Camera
