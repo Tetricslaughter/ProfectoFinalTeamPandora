@@ -14,7 +14,7 @@ public class EnemigoNavMesh : MonoBehaviour
     public LayerMask capaPlayer;
     private float rango = 5;
 
-    //public GameObject trofeo;
+    public GameObject trofeo;
     void Awake()
     {
         agente = GetComponent<UnityEngine.AI.NavMeshAgent>();
@@ -36,11 +36,11 @@ public class EnemigoNavMesh : MonoBehaviour
             agente.SetDestination(player.GetComponent<Transform>().position);
             agente.stoppingDistance = stopEn;
         }
-        //else
-        //{
-          //  agente.SetDestination(trofeo.GetComponent<Transform>().position);
-          //  agente.stoppingDistance = 3;
-        //}
+        else
+        {
+            agente.SetDestination(trofeo.GetComponent<Transform>().position);
+            agente.stoppingDistance = 3;
+        }
     }
 
     private void OnDrawGizmos()
