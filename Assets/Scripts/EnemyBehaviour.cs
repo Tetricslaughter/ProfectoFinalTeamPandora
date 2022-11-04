@@ -50,8 +50,8 @@ public class EnemyBehaviour : MonoBehaviour
         if (hp <= 0)
         {
 
-            animacion.SetBool("diying", true);
-            //Destroy(gameObject);
+            //animacion.SetBool("diying", true);
+            animacion.SetTrigger("death");
         }
     }
 
