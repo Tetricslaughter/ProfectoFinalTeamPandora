@@ -7,7 +7,7 @@ public class PlayerBehaviour : MonoBehaviour
     public float speed = 5f;
     private float speedRotate = 200f;
     private Animator animacion;
-    private float x, y;
+    //private float x, y;
     private float jumpForce;
     private Rigidbody physicBody;
     private bool isJump = false;
@@ -21,7 +21,10 @@ public class PlayerBehaviour : MonoBehaviour
 
     public int hpPlayer;
     public BarraVidaBehaviour barraVida;
+    public int danioEnemigo;
+
     public CambioEscena restart;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -50,8 +53,8 @@ public class PlayerBehaviour : MonoBehaviour
             MovePlayer();
         }
         Atacar();
+        //barraVida.vidaActual = hpPlayer;
 
-        
     }
     public void MovePlayer()
     {
@@ -155,6 +158,37 @@ public class PlayerBehaviour : MonoBehaviour
         {
             restart.CargaEscenaActual();
             // transform.position = new Vector3(62f,62f,42f);
+        }
+        /*if (collision.gameObject.tag=="leftImpacto")
+        {
+            Debug.Log("imactoI");
+        }
+        if (collision.gameObject.tag == "rightImpacto")
+        {
+            Debug.Log("imactoD");
+        }*/
+
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "rightImpacto")
+        {
+      
+            //Debug.Log("impacto");
+            hpPlayer -= danioEnemigo;
+            barraVida.vidaActual = hpPlayer;
+        }
+        if (other.gameObject.tag == "leftImpacto")
+        {
+            
+            hpPlayer -= danioEnemigo;
+            barraVida.vidaActual = hpPlayer;
+        }
+        if (hpPlayer <= 0)
+        {
+            Debug.Log("muerto");
+            //animacion.SetBool("diying", true);
+            //animacion.SetTrigger("death");
         }
     }
 }
