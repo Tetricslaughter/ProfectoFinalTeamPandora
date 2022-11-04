@@ -187,6 +187,7 @@ public class PlayerBehaviour : MonoBehaviour
         if (hpPlayer <= 0)
         {
             Debug.Log("muerto");
+            animacion.SetTrigger("estoyMuerto");
             //animacion.SetBool("diying", true);
             //animacion.SetTrigger("death");
         }
