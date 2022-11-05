@@ -26,6 +26,8 @@ public class PlayerBehaviour : MonoBehaviour
 
     public CambioEscena restart;
 
+    public int danio;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -87,21 +89,6 @@ public class PlayerBehaviour : MonoBehaviour
             floorDetected = false;
         }
 
-
-        /*if (floorDetected)
-        {
-            if (isJump)
-            {
-                animacion.SetBool("jump", true);
-                physicBody.AddForce(new Vector3(0, jumpForce, 0), ForceMode.Impulse);
-            }
-            animacion.SetBool("hitGround", true);
-        }
-        else
-        {
-            Falling();
-        }*/
-
         if (floorDetected)
         {
             if (!atacando)
@@ -110,7 +97,7 @@ public class PlayerBehaviour : MonoBehaviour
                 {
                     animacion.SetBool("jump", true);
                     physicBody.AddForce(new Vector3(0, jumpForce, 0), ForceMode.Impulse);
-                    SoundManager.SeleccionAudio(0, 0.01f);
+                    SoundManager.SeleccionAudio(0, 0.05f);
                 }
             }
             
@@ -161,7 +148,7 @@ public class PlayerBehaviour : MonoBehaviour
         avanza = false;
     }
 
-    private void OnCollisionEnter(Collision collision)
+    /*private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag=="Finish")
         {
@@ -171,16 +158,8 @@ public class PlayerBehaviour : MonoBehaviour
            
             // transform.position = new Vector3(62f,62f,42f);
         }
-        /*if (collision.gameObject.tag=="leftImpacto")
-        {
-            Debug.Log("imactoI");
-        }
-        if (collision.gameObject.tag == "rightImpacto")
-        {
-            Debug.Log("imactoD");
-        }*/
 
-    }
+    }*/
     private void OnTriggerEnter(Collider other)
     {
         if (!muerto)
@@ -198,6 +177,19 @@ public class PlayerBehaviour : MonoBehaviour
                 muerto = true;
             }
         }
-        
+        if (other.gameObject.tag == "Finish")
+        {
+            hpPlayer -= danio;
+            barraVida.vidaActual = hpPlayer;
+            //restart.CargaEscenaActual();
+
+            //AudioPerm.Pausar(); //DEMOSTRACION DE USO DEL METODO
+            if (!muerto)
+            {
+                transform.position = new Vector3(62f, 62f, 42f);
+            }
+            
+        }
+
     }
 }
