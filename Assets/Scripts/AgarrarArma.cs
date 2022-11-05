@@ -13,14 +13,13 @@ public class AgarrarArma : MonoBehaviour
 
     public BoxCollider armaBoxCollider;
     public BoxCollider punioBoxCollider;
-    //public BoxCollider body;
     // Start is called before the first frame update
     void Start()
     {
         DesactivarColliderArmas();
         tengoArma = false;
         armaEquipada = false;
-        //body.enabled = true;
+        
     }
 
     // Update is called once per frame
@@ -59,7 +58,6 @@ public class AgarrarArma : MonoBehaviour
 
     public void DesactivarColliderArmas()
     {
-       // body.enabled = true;
         if (armaBoxCollider != null)
         {
             armaBoxCollider.enabled = false;
@@ -68,7 +66,6 @@ public class AgarrarArma : MonoBehaviour
     }
     public void ActivarColliderArmas()
     {
-        //body.enabled = true;
         if (playerBehaviour.conArma)
         {
             if (armaBoxCollider != null)
@@ -80,5 +77,6 @@ public class AgarrarArma : MonoBehaviour
         {
             punioBoxCollider.enabled = true;
         }
+        
     }
 }
