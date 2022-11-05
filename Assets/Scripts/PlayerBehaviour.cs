@@ -110,6 +110,7 @@ public class PlayerBehaviour : MonoBehaviour
                 {
                     animacion.SetBool("jump", true);
                     physicBody.AddForce(new Vector3(0, jumpForce, 0), ForceMode.Impulse);
+                    SoundManager.SeleccionAudio(0, 0.01f);
                 }
             }
             
@@ -136,11 +137,13 @@ public class PlayerBehaviour : MonoBehaviour
             {
                 animacion.SetTrigger("golpe2");
                 atacando = true;
+                SoundManager.SeleccionAudio(1, 0.05f);
             }
             else
             {
                 animacion.SetTrigger("golpe1");
                 atacando = true;
+                SoundManager.SeleccionAudio(1, 0.05f);
             }
         }
     }
