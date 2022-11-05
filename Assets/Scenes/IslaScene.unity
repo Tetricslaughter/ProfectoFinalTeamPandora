@@ -3142,6 +3142,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1963715341}
     - target: {fileID: 3898150778682766737, guid: a57919a4452623741bb7bd8c630d1b5d, type: 3}
+      propertyPath: stopEn
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3898150778682766737, guid: a57919a4452623741bb7bd8c630d1b5d, type: 3}
       propertyPath: baseTrofeo
       value: 
       objectReference: {fileID: 330941433}
@@ -24689,15 +24693,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7026798714848121473, guid: 78ab5d4794eaf56478d922d42c61b908, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 178.85
+      value: 83.63
       objectReference: {fileID: 0}
     - target: {fileID: 7026798714848121473, guid: 78ab5d4794eaf56478d922d42c61b908, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 30.18
+      value: 36.9
       objectReference: {fileID: 0}
     - target: {fileID: 7026798714848121473, guid: 78ab5d4794eaf56478d922d42c61b908, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -59.43
+      value: 14.68
       objectReference: {fileID: 0}
     - target: {fileID: 7026798714848121473, guid: 78ab5d4794eaf56478d922d42c61b908, type: 3}
       propertyPath: m_LocalRotation.w

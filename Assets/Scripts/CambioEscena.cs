@@ -1,5 +1,5 @@
 using System.Collections;
-using System.Collections.Generic;
+//using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -9,20 +9,6 @@ public class CambioEscena : MonoBehaviour
     private Animator transicionAnimator;
     public int numeroEscena;
     public int  escenaActual;
-
-    // public void LoadNextScene()
-    // {
-    //     int escenaActual = SceneManagement.GetActiveScene().buildIndex;
-    //     if(escenaActual == "0")
-    //     {
-    //         SceneManager.LoadScene("SceneCueva");
-    //     }
-    //     // else
-    //     // {
-    //     //     SceneManager.LoadScene(0);
-
-    //     // }
-    // } 
 
     void Start()
     {

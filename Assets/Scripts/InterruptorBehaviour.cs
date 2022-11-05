@@ -45,8 +45,6 @@ public class InterruptorBehaviour : MonoBehaviour
 
             agarrarPremio.DesactivarPremio();
 
-
-
             if (puertaBehaviour1.NumberDoor == 1 && interruptorType == 1)
             {
                 puertaBehaviour1.OpenClose();
@@ -66,11 +64,16 @@ public class InterruptorBehaviour : MonoBehaviour
             {
                 puertaBehaviour4.OpenClose();
             }
+            
             if (interruptorType == 5)
             {
-                SceneManager.LoadScene(levelName);
+                Invoke("Ganaste", 0.5f);
             }
         }
         
+    }
+    public void Ganaste()
+    {
+        SceneManager.LoadScene(levelName);
     }
 }

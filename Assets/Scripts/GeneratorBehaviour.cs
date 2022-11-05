@@ -18,7 +18,6 @@ public class GeneratorBehaviour : MonoBehaviour
 
     public void ShootBullet()
     {
-        //Instantiate(bullet, transform.position, transform.rotation);
         switch (generatorType)
         {
             case 1:
