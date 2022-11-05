@@ -5,7 +5,7 @@ using UnityEngine;
 public class ActivarArma : MonoBehaviour
 {
     
-    public AgarrarArma agarrarArma;
+    private AgarrarArma agarrarArma;
     // Start is called before the first frame update
     void Start()
     {
