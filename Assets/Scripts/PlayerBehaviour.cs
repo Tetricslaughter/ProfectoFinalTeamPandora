@@ -7,7 +7,6 @@ public class PlayerBehaviour : MonoBehaviour
     public float speed = 5f;
     private float speedRotate = 200f;
     private Animator animacion;
-    //private float x, y;
     private float jumpForce;
     private Rigidbody physicBody;
     private bool isJump = false;
@@ -61,9 +60,6 @@ public class PlayerBehaviour : MonoBehaviour
             }
             Atacar();
         }
-        
-        //barraVida.vidaActual = hpPlayer;
-
     }
     public void MovePlayer()
     {
@@ -83,7 +79,6 @@ public class PlayerBehaviour : MonoBehaviour
         if (Physics.Raycast(transform.position, floor, 0.5f))
         {
             floorDetected = true;
-             //Debug.Log("esta en true");
         }
         else
         {
@@ -138,7 +133,6 @@ public class PlayerBehaviour : MonoBehaviour
     public void DejarDeGolpear()
     {
         atacando = false;
-        //avanza = false;
     }
     public void AvanzoSolo()
     {
@@ -149,18 +143,6 @@ public class PlayerBehaviour : MonoBehaviour
         avanza = false;
     }
 
-    /*private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.tag=="Finish")
-        {
-            restart.CargaEscenaActual();
-            
-            //AudioPerm.Pausar(); //DEMOSTRACION DE USO DEL METODO
-           
-            // transform.position = new Vector3(62f,62f,42f);
-        }
-
-    }*/
     private void OnTriggerEnter(Collider other)
     {
         if (!muerto)
@@ -182,9 +164,6 @@ public class PlayerBehaviour : MonoBehaviour
         {
             hpPlayer -= danio;
             barraVida.vidaActual = hpPlayer;
-            //restart.CargaEscenaActual();
-
-            //AudioPerm.Pausar(); //DEMOSTRACION DE USO DEL METODO
             if (!muerto)
             {
                 transform.position = new Vector3(62f, 62f, 42f);
@@ -195,7 +174,6 @@ public class PlayerBehaviour : MonoBehaviour
     }
     public void Perdiste()
     {
-        //Invoke("PlayLevel");
         SceneManager.LoadScene(levelName);
     }
 }

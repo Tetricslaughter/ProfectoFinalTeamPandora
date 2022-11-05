@@ -45,17 +45,15 @@ public class EnemigoNavMesh : MonoBehaviour
         if (detectedPlayer == true)
         {
             animacion.SetBool("avanza", true);
-
-            //Vector3 pos = new Vector3(player.GetComponent<Transform>().position.x, transform.position.y, transform.position.z);
             transform.LookAt(new Vector3(player.transform.position.x,transform.position.y,player.transform.position.z));
             agente.SetDestination(player.GetComponent<Transform>().position);
-            agente.stoppingDistance = stopEn;
+            //agente.stoppingDistance = stopEn;
         }
         else
         {
             transform.LookAt(new Vector3(baseTrofeo.transform.position.x, transform.position.y, baseTrofeo.transform.position.z));
             agente.SetDestination(baseTrofeo.GetComponent<Transform>().position);
-            agente.stoppingDistance = 2.3f;
+            agente.stoppingDistance = stopEn;
             animacion.SetBool("avanza", true);
         }
     }
@@ -80,33 +78,16 @@ public class EnemigoNavMesh : MonoBehaviour
             {
                 if (hit.transform.tag == "Player")
                 {
-                    //Debug.Log("atacar");
-                    //animacion.SetTrigger("beat1");
                     animacion.SetTrigger("beat2");
                     enemigoAtacando = true;
                 }
                 else if (hit.transform.tag == "Base")
                 {
-                    //Debug.Log("detenerse");
                     animacion.SetBool("avanza", false);
                 }
             }
             
             
         }
-        /*if (Input.GetKeyDown(KeyCode.E) && floorDetected && !atacando)
-        {
-
-            if (conArma)
-            {
-                animacion.SetTrigger("golpe2");
-                atacando = true;
-            }
-            else
-            {
-                animacion.SetTrigger("golpe1");
-                atacando = true;
-            }
-        }*/
     }
 }
