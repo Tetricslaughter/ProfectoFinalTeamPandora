@@ -53,6 +53,7 @@ public class EnemigoNavMesh : MonoBehaviour
         }
         else
         {
+            transform.LookAt(new Vector3(trofeo.transform.position.x, transform.position.y, trofeo.transform.position.z));
             agente.SetDestination(trofeo.GetComponent<Transform>().position);
             agente.stoppingDistance = 2.3f;
             animacion.SetBool("avanza", true);

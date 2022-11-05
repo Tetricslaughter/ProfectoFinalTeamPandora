@@ -22,12 +22,14 @@ public class PlayerBehaviour : MonoBehaviour
     public int hpPlayer;
     public BarraVidaBehaviour barraVida;
     public int danioEnemigo;
+    private bool muerto;
 
     public CambioEscena restart;
 
     // Start is called before the first frame update
     void Start()
     {
+        muerto = false;
         restart = FindObjectOfType<CambioEscena>();
         barraVida.vidaMax = hpPlayer;
         barraVida.vidaActual = hpPlayer;
@@ -48,11 +50,15 @@ public class PlayerBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!atacando)
+        if (!muerto)
         {
-            MovePlayer();
+            if (!atacando)
+            {
+                MovePlayer();
+            }
+            Atacar();
         }
-        Atacar();
+        
         //barraVida.vidaActual = hpPlayer;
 
     }
@@ -171,25 +177,21 @@ public class PlayerBehaviour : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "rightImpacto")
+        if (!muerto)
         {
-      
-            //Debug.Log("impacto");
-            hpPlayer -= danioEnemigo;
-            barraVida.vidaActual = hpPlayer;
+            if (other.gameObject.tag == "leftImpacto")
+            {
+                Debug.Log("impacto");
+                hpPlayer -= danioEnemigo;
+                barraVida.vidaActual = hpPlayer;
+            }
+            if (hpPlayer <= 0)
+            {
+                Debug.Log("muerto");
+                animacion.SetTrigger("estoyMuerto");
+                muerto = true;
+            }
         }
-        if (other.gameObject.tag == "leftImpacto")
-        {
-            
-            hpPlayer -= danioEnemigo;
-            barraVida.vidaActual = hpPlayer;
-        }
-        if (hpPlayer <= 0)
-        {
-            Debug.Log("muerto");
-            animacion.SetTrigger("estoyMuerto");
-            //animacion.SetBool("diying", true);
-            //animacion.SetTrigger("death");
-        }
+        
     }
 }
