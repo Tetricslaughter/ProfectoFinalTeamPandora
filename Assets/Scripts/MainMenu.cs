@@ -76,4 +76,9 @@ public class MainMenu : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void MusicSuena()
+    {
+        AudioPerm.Suena();
+    }
 }

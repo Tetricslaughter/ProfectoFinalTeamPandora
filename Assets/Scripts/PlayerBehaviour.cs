@@ -163,6 +163,9 @@ public class PlayerBehaviour : MonoBehaviour
         if (collision.gameObject.tag=="Finish")
         {
             restart.CargaEscenaActual();
+            
+            //AudioPerm.Pausar(); //DEMOSTRACION DE USO DEL METODO
+           
             // transform.position = new Vector3(62f,62f,42f);
         }
         /*if (collision.gameObject.tag=="leftImpacto")
