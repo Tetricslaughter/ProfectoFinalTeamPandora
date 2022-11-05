@@ -19,7 +19,7 @@ public class EnemigoNavMesh : MonoBehaviour
     public float rangoAtaque;
     private Vector3 posEnemy;
 
-    public GameObject trofeo;
+    public GameObject baseTrofeo;
     void Awake()
     {
         animacion = GetComponent<Animator>();
@@ -53,8 +53,8 @@ public class EnemigoNavMesh : MonoBehaviour
         }
         else
         {
-            transform.LookAt(new Vector3(trofeo.transform.position.x, transform.position.y, trofeo.transform.position.z));
-            agente.SetDestination(trofeo.GetComponent<Transform>().position);
+            transform.LookAt(new Vector3(baseTrofeo.transform.position.x, transform.position.y, baseTrofeo.transform.position.z));
+            agente.SetDestination(baseTrofeo.GetComponent<Transform>().position);
             agente.stoppingDistance = 2.3f;
             animacion.SetBool("avanza", true);
         }
@@ -85,7 +85,7 @@ public class EnemigoNavMesh : MonoBehaviour
                     animacion.SetTrigger("beat2");
                     enemigoAtacando = true;
                 }
-                else if (hit.transform.tag == "Trofeo")
+                else if (hit.transform.tag == "Base")
                 {
                     //Debug.Log("detenerse");
                     animacion.SetBool("avanza", false);

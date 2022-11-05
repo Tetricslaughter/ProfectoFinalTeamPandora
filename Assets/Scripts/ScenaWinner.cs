@@ -12,14 +12,14 @@ public class ScenaWinner : MonoBehaviour
         
     }
 
-    void OnTriggerEnter(Collider other)
+    /*void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {
             //PlayLevel();
             Invoke("Ganaste", 0.5f);
         }
-    }
+    }*/
 
     public void Ganaste()
     {

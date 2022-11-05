@@ -8,8 +8,8 @@ public class AgarrarPremio : MonoBehaviour
     private GameObject premio;
     [SerializeField]
     private PlayerBehaviour playerBehaviour;
-    private bool tengoPremio;
-    private bool premioEquipado;
+   // private bool tengoPremio;
+    //private bool premioEquipado;
 
   //  public BoxCollider premioBoxCollider;
     //public BoxCollider punioBoxCollider;
@@ -18,15 +18,15 @@ public class AgarrarPremio : MonoBehaviour
     void Start()
     {
        // DesactivarColliderPremios();
-        tengoPremio = false;
-        premioEquipado = false;
+       // tengoPremio = false;
+        //premioEquipado = false;
         //body.enabled = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (tengoPremio && Input.GetKeyDown(KeyCode.C))
+        /*if (tengoPremio)
         {
             if (premioEquipado)
             {
@@ -36,14 +36,14 @@ public class AgarrarPremio : MonoBehaviour
             {
                 ActivatePremio();
             }
-        }
+        }*/
     }
 
     public void ActivatePremio()
     {
-        tengoPremio = true;
+       // tengoPremio = true;
         premio.SetActive(true);
-        premioEquipado = true;
+       // premioEquipado = true;
 
         //playerBehaviour.speed = 3f;
         //playerBehaviour.conArma = true;
@@ -52,7 +52,8 @@ public class AgarrarPremio : MonoBehaviour
     public void DesactivarPremio()
     {
         premio.SetActive(false);
-        premioEquipado = false;
+      //  premioEquipado = false;
+        //tengoPremio = false;
      //   playerBehaviour.speed = 5f;
        // playerBehaviour.conArma = false;
     }
