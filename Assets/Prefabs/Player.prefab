@@ -2037,7 +2037,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1106563633393636324, guid: f4eb0bb8a7d9f1c49ab54ed09fb6340b, type: 3}
+  - {fileID: 2100000, guid: 7285a83b61d4009438a06552849c13a5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2284,6 +2284,8 @@ MonoBehaviour:
   barraVida: {fileID: 7353970611829782131}
   danioEnemigo: 1
   restart: {fileID: 0}
+  danio: 3
+  levelName: SceneGameOver
 --- !u!114 &7353970611829782121
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2426,7 +2428,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 1106563633393636324, guid: f4eb0bb8a7d9f1c49ab54ed09fb6340b, type: 3}
+  - {fileID: 2100000, guid: 58f2f65374929034c824f5b307d1d561, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

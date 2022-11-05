@@ -11,6 +11,7 @@ TagManager:
   - rightImpacto
   - leftImpacto
   - Enemy
+  - Base
   layers:
   - Default
   - TransparentFX
