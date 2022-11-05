@@ -9,6 +9,12 @@ EditorBuildSettings:
     path: Assets/Scenes/IslaScene.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
-    path: Assets/Scenes/SceneCueva.unity
+    path: Assets/Scenes/Scenecueva.unity
     guid: fc9fe1badec2ed8498e55b8993ee2a7f
+  - enabled: 1
+    path: Assets/Scenes/SceneWinner.unity
+    guid: 01698925f12c879408b8a6a2a96441ef
+  - enabled: 1
+    path: Assets/Scenes/SceneGameOver.unity
+    guid: 2cca1473c45c7f7458b72a35595665b5
   m_configObjects: {}

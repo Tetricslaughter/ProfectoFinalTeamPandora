@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class PlayerBehaviour : MonoBehaviour
 {
     public float speed = 5f;
@@ -27,6 +27,7 @@ public class PlayerBehaviour : MonoBehaviour
     public CambioEscena restart;
 
     public int danio;
+    public string levelName;
 
     // Start is called before the first frame update
     void Start()
@@ -191,5 +192,10 @@ public class PlayerBehaviour : MonoBehaviour
             
         }
 
+    }
+    public void Perdiste()
+    {
+        //Invoke("PlayLevel");
+        SceneManager.LoadScene(levelName);
     }
 }
