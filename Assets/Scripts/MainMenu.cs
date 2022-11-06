@@ -28,6 +28,11 @@ public class MainMenu : MonoBehaviour
         volumen.onValueChanged.AddListener(ChangeVolumenFx);
         volumenMaster.onValueChanged.AddListener(ChangeVolumenMaster);
     }
+    public void Start()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
 
     public void SetVolumen()
     {

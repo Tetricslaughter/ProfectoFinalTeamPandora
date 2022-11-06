@@ -68,6 +68,8 @@ public class InterruptorBehaviour : MonoBehaviour
             if (interruptorType == 5)
             {
                 Invoke("Ganaste", 0.5f);
+                SoundManager.SeleccionAudio(2, 0.05f);
+                AudioPerm.Pausar();
             }
         }
         
