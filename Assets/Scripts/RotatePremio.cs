@@ -13,6 +13,6 @@ public class RotatePremio : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Rotate(0, 0, 100f * Time.deltaTime);
+        transform.Rotate(0, 0, 100f * Time.deltaTime); //solamente para que rote el premio
     }
 }

@@ -5,18 +5,18 @@ using UnityEngine;
 public class ArrowBehaviour : MonoBehaviour
 {
     [SerializeField]
-    private int ArrowType;
+    private int ArrowType; //para diferenciar las flechas
     [SerializeField]
-    private float speed;
+    private float speed; //velocidad
 
     // Update is called once per frame
     void Update()
     {
-        switch (ArrowType)
+        switch (ArrowType) //evaluamos la expresion
         {
             case 1:
                 {
-                    transform.Translate(0, speed * Time.deltaTime, 0);
+                    transform.Translate(0, speed * Time.deltaTime, 0); //que se trasladen en el eje y..... las flechas estan rotadas 
                     break;
                 }
                 case 2:
@@ -28,7 +28,7 @@ public class ArrowBehaviour : MonoBehaviour
         DestroyArrow();
     }
 
-    public void DestroyArrow()
+    public void DestroyArrow() //este metodo va a ser para que se destruyan las flechas y no sobrecargar la escena
     {
         if (transform.position.z > 135f)
         {
