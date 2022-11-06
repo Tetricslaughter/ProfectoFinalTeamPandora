@@ -75,7 +75,7 @@ public class InterruptorBehaviour : MonoBehaviour
         
     }
     public void Ganaste()
-    {
+    {//se llama a una escena, que es pasada por nombre
         SceneManager.LoadScene(levelName);
     }
 }
