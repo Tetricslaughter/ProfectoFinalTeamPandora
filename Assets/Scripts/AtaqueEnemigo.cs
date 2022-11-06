@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class AtaqueEnemigo : MonoBehaviour
 {
-    
-    //public BoxCollider rightBoxCollider;
     public BoxCollider leftBoxCollider;
     // Start is called before the first frame update
     void Start()
@@ -18,14 +16,16 @@ public class AtaqueEnemigo : MonoBehaviour
     {
         
     }
+
+    //Desactiva los colliders del brazo del enemigo
     public void DesactivarCollider()
     {
-        //rightBoxCollider.enabled = false;
         leftBoxCollider.enabled = false;
     }
+
+    //Activa los colliders del brazo del enemigo
     public void ActivarCollider()
     {
-        //rightBoxCollider.enabled = true;
         leftBoxCollider.enabled = true;
     }
 }

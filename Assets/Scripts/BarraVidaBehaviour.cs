@@ -11,21 +11,17 @@ public class BarraVidaBehaviour : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //vidaActual = vidaMax;
     }
 
     // Update is called once per frame
     void Update()
     {
         ActualizarBarra();
-        /*if (vidaActual <= 0)
-        {
-
-        }*/
     }
 
+    //Actualiza que tan lleno esta la imagen que muestra la barra de vida
     public void ActualizarBarra()
     {
-        imgBarraVida.fillAmount = vidaActual / vidaMax;
+        imgBarraVida.fillAmount = vidaActual / vidaMax; //se hace una division porque el mayor valor de fillAmount es 1
     }
 }

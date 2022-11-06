@@ -8,6 +8,7 @@ public class ActivarPremio : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //se asigna el script AgarrarPremio del Player
         agarrarPremio = GameObject.FindGameObjectWithTag("Player").GetComponent<AgarrarPremio>();
     }
 
@@ -16,13 +17,13 @@ public class ActivarPremio : MonoBehaviour
     {
 
     }
-
+    //si el el Player atraviesa con el objeto se activa el Premio de su mano izquierda
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player")
         {
             agarrarPremio.ActivatePremio();
-            Destroy(gameObject);
+            Destroy(gameObject);//se destruye este objeto
         }
     }
 }

@@ -16,9 +16,9 @@ public class PuertaBehaviour : MonoBehaviour
     void Start()
     {
         isOpen = false; //por defecto esta cerrado la puerta
-        speedMoveDoor = 0.1f; //velocidad de la puarta sube
-        posY = transform.position.y;
-        altura = 4f;
+        speedMoveDoor = 0.1f; //velocidad con la que la puarta sube
+        posY = transform.position.y;//guarda la posicion en y de la puerta
+        altura = 4f; //altura a la que se eleva la puerta
     }
 
     // Update is called once per frame
@@ -27,11 +27,12 @@ public class PuertaBehaviour : MonoBehaviour
 
     }
 
+    //abre una puerta
     public void OpenClose()
     {
-        if (isOpen != true)
+        if (isOpen != true)//si la puerta no esta abierta
         {
-            switch (numberDoor)
+            switch (numberDoor)     //eleva la puerta correspondiente a su valor en numberDoor
             {
                 case 1:
                     {

@@ -22,7 +22,9 @@ public class InterruptorBehaviour : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //se guarda una posición donde se instanciará el premio
         posPremio = new Vector3(transform.position.x, transform.position.y + 1f, transform.position.z);
+        //se busca el script correspondiente buscándolo por el nombre del gameObjet del que queremos sacar el script
         agarrarPremio = GameObject.FindGameObjectWithTag("Player").GetComponent<AgarrarPremio>();
         puertaBehaviour1 = GameObject.Find("Puerta1").GetComponent<PuertaBehaviour>();
         puertaBehaviour2 = GameObject.Find("Puerta2").GetComponent<PuertaBehaviour>();
@@ -38,13 +40,13 @@ public class InterruptorBehaviour : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Trofeo") == true)
+        if (other.CompareTag("Trofeo") == true)  //evaluá si el objeto que lo atraviesa tiene el tag Trofeo
         {
-            Debug.Log("se instancio");
-            Instantiate(premio, posPremio, transform.rotation);
+            Instantiate(premio, posPremio, transform.rotation); //instancia un premio
 
-            agarrarPremio.DesactivarPremio();
+            agarrarPremio.DesactivarPremio(); //desactiva el premio que tiene en su mano el player
 
+            //dependiendo de cual sea el interruptor, abre una determinada puerta
             if (puertaBehaviour1.NumberDoor == 1 && interruptorType == 1)
             {
                 puertaBehaviour1.OpenClose();
@@ -65,11 +67,11 @@ public class InterruptorBehaviour : MonoBehaviour
                 puertaBehaviour4.OpenClose();
             }
             
-            if (interruptorType == 5)
+            if (interruptorType == 5)   //si es el ultimo
             {
-                Invoke("Ganaste", 0.5f);
-                SoundManager.SeleccionAudio(2, 0.05f);
-                AudioPerm.Pausar();
+                Invoke("Ganaste", 0.5f);//invoca el método Ganaste
+                SoundManager.SeleccionAudio(2, 0.05f); //reproduce un sonido
+                AudioPerm.Pausar();//pausa el sonido de la escena anterior
             }
         }
         
