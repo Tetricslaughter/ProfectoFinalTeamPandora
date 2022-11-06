@@ -3897,7 +3897,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   transicionTime: 1
-  numeroEscena: 0
+  numeroEscena: 1
   escenaActual: 0
 --- !u!1001 &945244039
 PrefabInstance:
@@ -7399,26 +7399,6 @@ PrefabInstance:
     - target: {fileID: 2521299289336762194, guid: 12e8d78f2045fdb4189b78e10bdfe1c5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2521299289336762195, guid: 12e8d78f2045fdb4189b78e10bdfe1c5, type: 3}
-      propertyPath: speedX
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2521299289336762195, guid: 12e8d78f2045fdb4189b78e10bdfe1c5, type: 3}
-      propertyPath: speedZ
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2521299289336762195, guid: 12e8d78f2045fdb4189b78e10bdfe1c5, type: 3}
-      propertyPath: plataformType
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2521299289336762195, guid: 12e8d78f2045fdb4189b78e10bdfe1c5, type: 3}
-      propertyPath: negativeSpeedX
-      value: -4
-      objectReference: {fileID: 0}
-    - target: {fileID: 2521299289336762195, guid: 12e8d78f2045fdb4189b78e10bdfe1c5, type: 3}
-      propertyPath: negativeSpeedZ
-      value: -5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 12e8d78f2045fdb4189b78e10bdfe1c5, type: 3}
