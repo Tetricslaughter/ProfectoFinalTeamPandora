@@ -18,7 +18,9 @@ public class InterruptorNvl1 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //se guarda una posición donde se instanciará el premio
         posPremio = new Vector3(transform.position.x, transform.position.y + 1f, transform.position.z);
+        //se busca el script correspondiente buscándolo por el nombre del gameObjet del que queremos sacar el script
         agarrarPremio = GameObject.FindGameObjectWithTag("Player").GetComponent<AgarrarPremio>();
         puertaBehaviour1 = GameObject.Find("PuertaNvl1").GetComponent<PuertaBehaviour>();
     }
@@ -31,13 +33,13 @@ public class InterruptorNvl1 : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Trofeo") == true)
+        if (other.CompareTag("Trofeo") == true) //evaluá si el objeto que lo atraviesa tiene el tag Trofeo
         {
-            Debug.Log("se instancio");
-            Instantiate(premio, posPremio, transform.rotation);
+            Instantiate(premio, posPremio, transform.rotation); //instancia un premio
 
-            agarrarPremio.DesactivarPremio();
+            agarrarPremio.DesactivarPremio();   //desactiva el premio que tiene en su mano el player
 
+            //abre una puerta
             if (puertaBehaviour1.NumberDoor == 6 && interruptorType == 6)
             {
                 puertaBehaviour1.OpenClose();

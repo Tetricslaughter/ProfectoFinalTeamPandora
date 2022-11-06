@@ -13,6 +13,7 @@ public class SeguirCamara : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //esto hace que el frente(forward) del canvas de los enemigos coincida con el frente de la cámara
         transform.forward = Camera.main.transform.forward;
     }
 }

@@ -18,12 +18,13 @@ public class AgarrarPremio : MonoBehaviour
     {
 
     }
-
+    //Activa el premio que sujeta el player
     public void ActivatePremio()
     {
         premio.SetActive(true);
     }
 
+    //Desactiva el premio que sujeta el player
     public void DesactivarPremio()
     {
         premio.SetActive(false);
